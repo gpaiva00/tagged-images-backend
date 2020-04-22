@@ -1,7 +1,7 @@
-import express from 'express';
-import ImageController from './controllers/Image';
-import UploadController from './controllers/Upload';
-import TagController from './controllers/Tag';
+const express = require('express');
+const ImageController = require('./controllers/Image');
+const UploadController = require('./controllers/Upload');
+const TagController = require('./controllers/Tag');
 
 const routes = express.Router();
 

@@ -1,4 +1,4 @@
-import Tag from '../database/models/Tag';
+const Tag = require('../database/models/Tag');
 
 export default {
   async index(req, res) {

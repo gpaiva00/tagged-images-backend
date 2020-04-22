@@ -1,4 +1,4 @@
-import Image from '../database/models/Image';
+const Image = require('../database/models/Image');
 
 export default {
   async index(req, res) {
