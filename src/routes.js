@@ -1,7 +1,7 @@
 import express from 'express';
-import ImageController from '@controllers/Image';
-import UploadController from '@controllers/Upload';
-import TagController from '@controllers/Tag';
+import ImageController from './controllers/Image';
+import UploadController from './controllers/Upload';
+import TagController from './controllers/Tag';
 
 const routes = express.Router();
 
