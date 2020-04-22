@@ -1,4 +1,4 @@
-import Tag from '@models/Tag';
+import Tag from '../database/models/Tag';
 
 export default {
   async index(req, res) {
