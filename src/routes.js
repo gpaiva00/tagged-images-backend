@@ -21,4 +21,4 @@ routes.get('/tags', TagController.index);
 routes.post('/tags', TagController.create);
 routes.delete('/tags/:id', TagController.delete);
 
-export default routes;
+module.exports =  routes;

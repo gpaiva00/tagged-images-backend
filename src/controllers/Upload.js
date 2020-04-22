@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-export default {
+module.exports = {
   async upload(req, res) {
     const uploadAPI = process.env.VUE_APP_UPLOAD_API;
     const uploadKey = process.env.VUE_APP_UPLOAD_KEY;

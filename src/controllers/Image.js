@@ -1,6 +1,6 @@
 const Image = require('../database/models/Image');
 
-export default {
+module.exports = {
   async index(req, res) {
     const { page = 1, tags = [] } = req.query;
     const skip = (page - 1) * 5;
