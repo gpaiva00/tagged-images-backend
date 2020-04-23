@@ -22,6 +22,7 @@ module.exports = {
 
     // create file name
     let fileName = "Demo_Stream_" + getTimestamp() + ".pptx";
+   
     // 1. Create a new Presentation
     let pptx = new pptxgen();
     pptx.company = 'Tagged Images';
@@ -30,6 +31,7 @@ module.exports = {
     // adds first the default slide image
     addDefaultSlideImage(pptx);
 
+    // create slide with each selected image
     images.forEach((image) => {
       const slide = pptx.addSlide();
       const imageUrl = image.url;
@@ -60,9 +62,23 @@ module.exports = {
       })
       .catch(err => {
         console.log(err);
-        return res.status(500).json({ error: 'Download failed.' })
+        return res.status(500).json({ error: 'Create presentation failed.' })
       });
-  }
+  },
+
+  async download(req, res) {
+    try {
+      const { fileName } = req.params;
+      const fileUrl = `./tmp/${fileName}`;
+      
+      return res.download(fileUrl, fileName, (err) => {
+        if (err) res.status(500).json({ error: 'File not found.' });
+      });
+    } catch(err) {
+      console.log(err);
+      res.status(500).json({ error: 'Download presentation failed.' })
+    }
+  },
 }
 
   //  pres.stream()

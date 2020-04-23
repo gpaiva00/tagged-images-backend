@@ -19,6 +19,7 @@ routes.delete('/images/:id', ImageController.delete);
 
 // presnetation
 routes.post('/presentation', PresentationController.create);
+routes.get('/download/:fileName', PresentationController.download);
 
 // tags
 routes.get('/tags', TagController.index);
